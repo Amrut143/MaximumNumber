@@ -35,4 +35,20 @@ public class MaximumValue {
         else
             return thirdValue;
     }
+
+    /**
+     *
+     * @param firstValue : Float
+     * @param secondValue : Float
+     * @param thirdValue : Float
+     * @return : maximum float value
+     */
+    public String testMaximum(String firstValue, String secondValue, String thirdValue) {
+        if (firstValue.compareTo(secondValue) > 0 && firstValue.compareTo(thirdValue) > 0)
+            return firstValue;
+        else if (secondValue.compareTo(firstValue) > 0 && secondValue.compareTo(thirdValue) > 0)
+            return secondValue;
+        else
+            return thirdValue;
+    }
 }
