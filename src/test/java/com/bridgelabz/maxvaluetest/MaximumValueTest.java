@@ -18,4 +18,10 @@ public class MaximumValueTest {
         Integer maximum = maximumValue.testMaximum(78, 52, 43);
         Assert.assertEquals((Integer) 78, maximum);
     }
+
+    @Test
+    public void givenMaxIntegerNumber_AtSecondPosition_ShouldReturnSameNumber(){
+        Integer maximum = maximumValue.testMaximum(78, 82, 43);
+        Assert.assertEquals((Integer) 82, maximum);
+    }
 }
