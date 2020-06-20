@@ -34,4 +34,5 @@ public class MaximumValue {
             return secondValue;
         else
             return thirdValue;
+    }
 }
