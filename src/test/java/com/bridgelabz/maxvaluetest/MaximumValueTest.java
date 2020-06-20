@@ -60,4 +60,10 @@ public class MaximumValueTest {
         String maximum = maximumValue.testMaximum("Apple", "Peach", "Banana");
         Assert.assertEquals("Peach", maximum);
     }
+
+    @Test
+    public void givenMaxStringValue_AtThirdPosition_ShouldReturnSameNumber() {
+        String maximum = maximumValue.testMaximum("Apple", "Banana", "Peach");
+        Assert.assertEquals("Peach", maximum);
+    }
 }
