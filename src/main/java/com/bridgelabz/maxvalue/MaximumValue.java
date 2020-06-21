@@ -5,45 +5,14 @@ package com.bridgelabz.maxvalue;
  */
 public class MaximumValue {
     /**
-     *
-     * @param firstValue : Integer
-     * @param secondValue : Integer
-     * @param thirdValue : Integer
-     * @return : maximum integer value
+     * Use Generic method
+     * @param firstValue
+     * @param secondValue
+     * @param thirdValue
+     * @return : maximum value
+     * determine the largest of three comparable objects
      */
-    public int testMaximum(Integer firstValue, Integer secondValue, Integer thirdValue) {
-        if (firstValue.compareTo(secondValue) > 0 && firstValue.compareTo(thirdValue) > 0)
-            return firstValue;
-        else if (secondValue.compareTo(firstValue) > 0 && secondValue.compareTo(thirdValue) > 0)
-            return secondValue;
-        else
-            return thirdValue;
-    }
-
-    /**
-     *
-     * @param firstValue : Float
-     * @param secondValue : Float
-     * @param thirdValue : Float
-     * @return : maximum float value
-     */
-    public float testMaximum(Float firstValue, Float secondValue, Float thirdValue) {
-        if (firstValue.compareTo(secondValue) > 0 && firstValue.compareTo(thirdValue) > 0)
-            return firstValue;
-        else if (secondValue.compareTo(firstValue) > 0 && secondValue.compareTo(thirdValue) > 0)
-            return secondValue;
-        else
-            return thirdValue;
-    }
-
-    /**
-     *
-     * @param firstValue : Float
-     * @param secondValue : Float
-     * @param thirdValue : Float
-     * @return : maximum float value
-     */
-    public String testMaximum(String firstValue, String secondValue, String thirdValue) {
+    public static <T extends Comparable > T testMaximum(T firstValue, T secondValue, T thirdValue) {
         if (firstValue.compareTo(secondValue) > 0 && firstValue.compareTo(thirdValue) > 0)
             return firstValue;
         else if (secondValue.compareTo(firstValue) > 0 && secondValue.compareTo(thirdValue) > 0)
