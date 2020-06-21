@@ -2,8 +2,27 @@ package com.bridgelabz.maxvalue;
 
 /**
  * @Author : Amrut
+ * Creating Generic Class
  */
-public class MaximumValue {
+public class MaximumValue<T extends Comparable<T>> {
+    T firstValue, secondValue, thirdValue;
+
+    /**
+     * Defining parameterized constructor
+     * @param firstValue
+     * @param secondValue
+     * @param thirdValue
+     */
+    public MaximumValue(T firstValue, T secondValue, T thirdValue){
+        this.firstValue = firstValue;
+        this.secondValue = secondValue;
+        this.thirdValue = thirdValue;
+    }
+
+    /*Define testMaximum method to call the static testMaximum method*/
+    public T testMaximum(){
+        return MaximumValue.testMaximum(firstValue, secondValue, thirdValue);
+    }
     /**
      * Use Generic method
      * @param firstValue
