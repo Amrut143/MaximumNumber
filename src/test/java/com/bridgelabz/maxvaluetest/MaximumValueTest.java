@@ -30,4 +30,22 @@ public class MaximumValueTest {
         Integer maximum = maximumValue.testMaximum(78, 52, 89);
         Assert.assertEquals((Integer) 89, maximum);
     }
+
+    @Test
+    public void givenMaxFloatNumber_AtFirstPosition_ShouldReturnSameNumber(){
+        Float maximum = maximumValue.testMaximum(7.8f, 5.2f, 4.3f);
+        Assert.assertEquals((Float) 7.8f, maximum);
+    }
+
+    @Test
+    public void givenMaxFloatNumber_AtSecondPosition_ShouldReturnSameNumber() {
+        Float maximum = maximumValue.testMaximum(7.8f, 8.2f, 4.3f);
+        Assert.assertEquals((Float) 8.2f, maximum);
+    }
+
+    @Test
+    public void givenMaxFloatNumber_AtThirdPosition_ShouldReturnSameNumber() {
+        Float maximum = maximumValue.testMaximum(7.8f, 5.2f, 8.9f);
+        Assert.assertEquals((Float) 8.9f, maximum);
+    }
 }
