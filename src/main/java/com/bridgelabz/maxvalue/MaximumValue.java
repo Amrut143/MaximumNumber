@@ -1,42 +1,40 @@
 package com.bridgelabz.maxvalue;
 
+import java.util.Arrays;
+
 /**
  * @Author : Amrut
  * Creating Generic Class
  */
 public class MaximumValue<T extends Comparable<T>> {
-    T firstValue, secondValue, thirdValue;
+    T[] values;
 
     /**
      * Defining parameterized constructor
-     * @param firstValue
-     * @param secondValue
-     * @param thirdValue
+     * @param values
      */
-    public MaximumValue(T firstValue, T secondValue, T thirdValue){
-        this.firstValue = firstValue;
-        this.secondValue = secondValue;
-        this.thirdValue = thirdValue;
+    public MaximumValue(T[] values){
+        this.values = values;
     }
 
     /*Define testMaximum method to call the static testMaximum method*/
     public T testMaximum(){
-        return MaximumValue.testMaximum(firstValue, secondValue, thirdValue);
+        return MaximumValue.testMaximum(values);
     }
+
     /**
-     * Use Generic method
-     * @param firstValue
-     * @param secondValue
-     * @param thirdValue
-     * @return : maximum value
-     * determine the largest of three comparable objects
+     * Use generic method
+     * @param values
+     * @param <T>
+     * @return
      */
-    public static <T extends Comparable > T testMaximum(T firstValue, T secondValue, T thirdValue) {
-        T max =  firstValue;
-        if (secondValue.compareTo(max)>0)
-            max = secondValue;
-        else if (thirdValue.compareTo(max)>0)
-            max=thirdValue ;
+    public static <T extends Comparable > T testMaximum(T[] values) {
+        Arrays.sort(values);
+        T max = values[0];
+        for (T value : values){
+            if (value.compareTo(max) > 0)
+                max = value;
+        }
         return max;
     }
 }
