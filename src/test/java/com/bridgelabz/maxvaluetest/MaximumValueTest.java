@@ -2,11 +2,7 @@ package com.bridgelabz.maxvaluetest;
 
 import com.bridgelabz.maxvalue.MaximumValue;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Arrays;
-
 import static com.bridgelabz.maxvalue.MaximumValue.testMaximum;
 
 public class MaximumValueTest<T extends Comparable<T>> {
@@ -89,11 +85,13 @@ public class MaximumValueTest<T extends Comparable<T>> {
         Assert.assertEquals((Integer)88, result);
     }
 
+    @Test
     public void givenFloatValues_ShouldReturnMaximum_FromArrayOfValues(){
         Float result = new MaximumValue<Float>(new Float[]{2.3f, 3.4f, 2.0f, 7.0f, 8.2f,4.4f,5.3f,8.8f,2.7f,8.0f}).testMaximum();
         Assert.assertEquals((Float) 8.8f, result);
     }
 
+    @Test
     public void givenStringValues_ShouldReturnMaximum_FromArrayOfValues(){
         String result = new MaximumValue<String>(new String[]{"Peach", "Apple", "Banana", "Tiger", "Java"}).testMaximum();
         Assert.assertEquals("Tiger", result);
