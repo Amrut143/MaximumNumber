@@ -2,37 +2,41 @@ package com.bridgelabz.maxvalue;
 
 /**
  * @Author : Amrut
+ * Creating Generic Class
  */
-public class MaximumValue {
-    /**
-     *
-     * @param firstValue : Integer
-     * @param secondValue : Integer
-     * @param thirdValue : Integer
-     * @return : maximum integer value
-     */
-    public int testMaximum(Integer firstValue, Integer secondValue, Integer thirdValue) {
-        if (firstValue.compareTo(secondValue) > 0 && firstValue.compareTo(thirdValue) > 0)
-            return firstValue;
-        else if (secondValue.compareTo(firstValue) > 0 && secondValue.compareTo(thirdValue) > 0)
-            return secondValue;
-        else
-            return thirdValue;
-    }
+public class MaximumValue<T extends Comparable<T>> {
+    T firstValue, secondValue, thirdValue;
 
     /**
-     *
-     * @param firstValue : Float
-     * @param secondValue : Float
-     * @param thirdValue : Float
-     * @return : maximum float value
+     * Defining parameterized constructor
+     * @param firstValue
+     * @param secondValue
+     * @param thirdValue
      */
-    public float testMaximum(Float firstValue, Float secondValue, Float thirdValue) {
-        if (firstValue.compareTo(secondValue) > 0 && firstValue.compareTo(thirdValue) > 0)
-            return firstValue;
-        else if (secondValue.compareTo(firstValue) > 0 && secondValue.compareTo(thirdValue) > 0)
-            return secondValue;
-        else
-            return thirdValue;
+    public MaximumValue(T firstValue, T secondValue, T thirdValue){
+        this.firstValue = firstValue;
+        this.secondValue = secondValue;
+        this.thirdValue = thirdValue;
+    }
+
+    /*Define testMaximum method to call the static testMaximum method*/
+    public T testMaximum(){
+        return MaximumValue.testMaximum(firstValue, secondValue, thirdValue);
+    }
+    /**
+     * Use Generic method
+     * @param firstValue
+     * @param secondValue
+     * @param thirdValue
+     * @return : maximum value
+     * determine the largest of three comparable objects
+     */
+    public static <T extends Comparable > T testMaximum(T firstValue, T secondValue, T thirdValue) {
+        T max =  firstValue;
+        if (secondValue.compareTo(max)>0)
+            max = secondValue;
+        else if (thirdValue.compareTo(max)>0)
+            max=thirdValue ;
+        return max;
     }
 }
