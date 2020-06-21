@@ -1,6 +1,7 @@
 package com.bridgelabz.maxvalue;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 /**
  * @Author : Amrut
@@ -30,11 +31,22 @@ public class MaximumValue<T extends Comparable<T>> {
      */
     public static <T extends Comparable > T testMaximum(T[] values) {
         Arrays.sort(values);
-        T max = values[0];
+        T max = (values[0]);
         for (T value : values){
             if (value.compareTo(max) > 0)
                 max = value;
         }
+        printMax(values, max);
         return max;
+    }
+
+    /**
+     * Defining method to print maximum value
+     * @param values
+     * @param max
+     * @param <T>
+     */
+    public static <T> void printMax(T[] values, T max){
+        System.out.println("Maximum value is::" +max);
     }
 }
